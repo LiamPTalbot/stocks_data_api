@@ -39,8 +39,6 @@ app.use(express.json())
 app.use(require('cors')())
 app.use(express.static('public'))
 
-app.listen(port, () => {console.log(`Server has started on port: ${port}`)})
-
 // step 3 - define api endpoints to access stock data (and call webscraper)
 
 app.post('/api', async (req, res) => {
@@ -50,3 +48,5 @@ app.post('/api', async (req, res) => {
     res.status(200).send({prices})
 })
 
+
+app.listen(port, () => {console.log(`Server has started on port: ${port}`)})
